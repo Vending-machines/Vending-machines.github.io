@@ -15,7 +15,7 @@
   "bugs": {
     "url": "https://github.com/Vending-machines/Pagesrc/issues"
   },
-  "homepage": "https://github.com/Vending-machines/Pagesrc#readme",
+  "homepage": "https://Vending-machine.github.io",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.12.13",

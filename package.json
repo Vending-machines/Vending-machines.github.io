@@ -1,0 +1,61 @@
+{
+  "name": "pagesrc",
+  "version": "1.0.0",
+  "description": "vending-machine.github.ioのコード",
+  "scripts": {
+    "start": "webpack serve",
+    "build": "webpack",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vending-machines/Pagesrc.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Vending-machines/Pagesrc/issues"
+  },
+  "homepage": "https://github.com/Vending-machines/Pagesrc#readme",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/preset-env": "^7.12.13",
+    "@types/copy-webpack-plugin": "^6.4.0",
+    "@types/fibers": "^3.1.0",
+    "@types/html-webpack-plugin": "^3.2.4",
+    "@types/node": "^14.14.25",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "@types/sass": "^1.16.0",
+    "@types/webpack": "^4.41.26",
+    "@types/webpack-dev-server": "^3.11.1",
+    "autoprefixer": "^10.2.4",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^7.0.0",
+    "css-loader": "^5.0.1",
+    "cssnano": "^4.1.10",
+    "fibers": "^5.0.0",
+    "html-webpack-plugin": "^5.0.0",
+    "postcss": "^8.2.4",
+    "postcss-loader": "^5.0.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "sass": "^1.32.6",
+    "sass-loader": "^10.1.1",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.15",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.3",
+    "webpack": "^5.20.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {
+    "bulma": "^0.9.2",
+    "core-js": "^3.8.3",
+    "gh-pages": "^3.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "tslib": "^2.1.0"
+  }
+}

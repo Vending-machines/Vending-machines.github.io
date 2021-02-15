@@ -1,7 +1,7 @@
 import  { FC } from 'react';
 import * as React from "react";
 
-import Col from "../Column/Column"
+import "./Top.module.scss";
 
 const Top: FC = () => {
     const columnSetting: string =

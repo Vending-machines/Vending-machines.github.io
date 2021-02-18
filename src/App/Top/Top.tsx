@@ -32,7 +32,7 @@ const Top: FC = () => {
                                 </div>
                                 <div data-aos="fade-down" className={columnSetting}>
                                     <h1 className="titled title is-2 mb-6"><span>売っている</span><span>商品が</span><span>わからない</span></h1>
-                                    <p className="subtitle hide-text is-4">調べたい自販機を選択することで、その自販機で販売されている商品の一覧が表示されます。</p>
+                                    <p className="subtitle has-text-white is-4">調べたい自販機を選択することで、その自販機で販売されている商品の一覧が表示されます。</p>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@ const Top: FC = () => {
                             <div className="columns  is-vcentered hero-2">
                                 <div data-aos="fade-left" className={columnSetting}>
                                     <h1 className="titled title is-2 mb-6"><span>商品の</span><span>場所が</span><span>わからない</span></h1>
-                                    <p className="subtitle hide-text is-4">調べたい商品を選択することで、商品がどこで売っているか検索できます。</p>
+                                    <p className="subtitle has-text-white is-4">調べたい商品を選択することで、商品がどこで売っているか検索できます。</p>
                                 </div>
                                 <div data-aos="fade-down" className={columnSetting}>
                                     <figure className="image is-square">
@@ -72,7 +72,7 @@ const Top: FC = () => {
                                 </div>
                                 <div data-aos="fade-down" className={columnSetting}>
                                     <h1 className="titled title is-2 mb-6"><span>どんな</span><span>商品なのか</span><span>わからない</span></h1>
-                                    <p className="subtitle hide-text is-4">商品を検索する際、画像も一緒に確認できます</p>
+                                    <p className="subtitle has-text-white is-4">商品を検索する際、画像も一緒に確認できます</p>
                                 </div>
                             </div>
                         </div>

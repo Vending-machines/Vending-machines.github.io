@@ -20,8 +20,8 @@ const Top: FC = () => {
                 </div>
             </section>
 
-            <div className="BarPoint1">
-                <section id="bar1" className="hero is-small">
+            <div className="hov-1">
+                <section className="hero is-small bars bar-1">
                     <div className="hero-body">
                         <div className="container">
                             <div className="columns  is-vcentered">
@@ -40,13 +40,13 @@ const Top: FC = () => {
                 </section>
             </div>
 
-            <div className="BarPoint2">
-                <section id="bar2" className="hero is-small">
+            <div className="hov-2">
+                <section className="hero is-small bars bar-2">
                     <div className="hero-body">
                         <div className="container">
                             <div className="columns  is-vcentered hero-2">
                                 <div data-aos="fade-left" className={columnSetting}>
-                                    <h1 className="titled title is-1 mb-6"><span>商品の</span><span>場所が</span><span>わからない</span></h1>
+                                    <h1 className="titled title is-2 mb-6"><span>商品の</span><span>場所が</span><span>わからない</span></h1>
                                     <p className="subtitle hide-text is-4">調べたい商品を選択することで、商品がどこで売っているか検索できます。</p>
                                 </div>
                                 <div data-aos="fade-down" className={columnSetting}>
@@ -60,8 +60,8 @@ const Top: FC = () => {
                 </section>
             </div>
 
-            <div className="BarPoint3">
-                <section id="bar3" className="hero is-small">
+            <div className="hov-3">
+                <section className="hero is-small bars bar-3">
                     <div className="hero-body">
                         <div className="container">
                             <div className="columns  is-vcentered">

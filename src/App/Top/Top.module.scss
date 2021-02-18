@@ -1,40 +1,38 @@
 section{
-  position: relative;
-  width: 100%;
-  margin: 6px auto;
-  padding: 0.8em 0;
-  color: lightseagreen;
-  font-size: 14px;
-  text-align: center;
-  background: rgba(255,255,255,.3);
-  &:before{
-    content: "";
-    z-index: -1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: lightseagreen;
-    transition: width 0.5s;
+  &.bars{
+    position: relative;
+    width: 100%;
+    margin: 6px auto;
+    padding: 0.8em 0;
+    color: lightseagreen;
+    font-size: 14px;
+    text-align: center;
+    background: rgba(255,255,255,.3);
+    &:before{
+      content: "";
+      z-index: -1;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: lightseagreen;
+      transition: width 0.5s;
+    }
   }
 }
 
-.BarPoint1:hover #bar1::before{
+.hov-1:hover .bar-1::before{
   width: 100%;
 }
 
-.BarPoint2:hover #bar2::before{
+.hov-2:hover .bar-2::before{
   width: 100%;
 }
 
-.BarPoint3:hover #bar3::before{
+.hov-3:hover .bar-3::before{
   width: 100%;
-}
-
-.hide-text{
-  color: white;
 }
 
 span{

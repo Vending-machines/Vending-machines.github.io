@@ -1,4 +1,4 @@
-import { Configuration } from "webpack";
+import {Configuration} from "webpack";
 import * as path from "path";
 import sass from "sass";
 import fibers from "fibers";
@@ -36,6 +36,17 @@ const config: Configuration = {
                     },
                     {
                         loader: "ts-loader",
+                    },
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                        },
                     },
                 ],
             },

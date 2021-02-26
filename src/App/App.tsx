@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { MapContainer, TileLayer, Marker, Popup, ImageOverlay} from 'react-leaflet';
+import {MapContainer, TileLayer, Marker, Popup, ImageOverlay} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 
 import Header from "./Header/Header";
@@ -14,15 +14,21 @@ import kosenMap from "./img/kosenMap.png"
 const pagesName:string[] = ['Top', 'Search', 'Contact'];
 
 const Search: FC = () => {
-    return(
-        <MapContainer center={[0, 0]} zoom={0} scrollWheelZoom={false}>
-            <TileLayer url="" opacity={0.5} zIndex={10} />
+    const MapImage = {
+        url: kosenMap,
+        height: 640,
+        width: 960
+    }
+    let Camera = [100, 100]
 
+
+    return(
+        <MapContainer center={[100, 100]} zoom={2} scrollWheelZoom={false}>
             <ImageOverlay
-                url = {kosenMap}
+                url = {MapImage.url}
                 bounds={[
                     [0, 0],
-                    [960, 300],
+                    [MapImage.height/4, MapImage.width/4],
                 ]}
             />
         </MapContainer>

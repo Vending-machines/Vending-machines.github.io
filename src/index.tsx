@@ -15,10 +15,6 @@ import Search from "./pages/Search/Search"
 import "../node_modules/bulma/bulma.sass";
 
 
-
-
-
-
 const pagesName:string[] = ['Top', 'Search', 'Contact'];
 const index = document.getElementById("root");
 

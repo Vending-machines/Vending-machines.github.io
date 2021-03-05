@@ -8,7 +8,7 @@ const Top: FC = () => {
         "column is-10-mobile is-offset-1-mobile is-10-tablet is-offset-1-tablet is-4-desktop is-offset-1-desktop is-4-widescreen is-offset-1-widescreen is-4-fullhd is-offset-1-fullhd";
 
     return(
-        <div>
+        <>
             <section className="hero is-fullheight-with-navbar">
                 <div className="hero-body">
                     <div className="container has-text-centered">
@@ -80,7 +80,7 @@ const Top: FC = () => {
                 </section>
             </div>
 
-        </div>
+        </>
     );
 };
 

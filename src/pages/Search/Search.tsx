@@ -4,6 +4,8 @@ import {MapContainer, ImageOverlay,} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./Search.module.scss"
 
+import MachineMarkers from "../../components/atom/MachineMarkers/MachineMarkers";
+
 import kosenMap from "../../assets/img/kosenMap.png"
 
 function Search() {
@@ -25,6 +27,8 @@ function Search() {
                     url = {kosenMap}
                     bounds={[[0,0],[90,240]]}
                 />
+
+                <MachineMarkers />
 
             </MapContainer>
         </div>

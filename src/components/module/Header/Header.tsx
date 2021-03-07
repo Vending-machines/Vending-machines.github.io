@@ -1,6 +1,4 @@
-import {FC} from "react";
-import * as React from 'react';
-import { useState } from 'react';
+import React, { FC, useState} from "react";
 import  { Link } from 'react-router-dom';
 
 import "./header.module.scss"
@@ -11,7 +9,6 @@ interface PropsType {
 
 const Header:FC< PropsType > = ({pages}) => {
     const [Menu, toggleMenu] = useState<boolean>(false);
-
 
     return (
         <header>

@@ -1,5 +1,4 @@
-import  { FC } from 'react';
-import * as React from "react";
+import React, { FC } from 'react';
 
 import "./Top.module.scss";
 

@@ -10,6 +10,8 @@ import Footer from "./components/module/Footer/Footer";
 //pages
 import Top from "./pages/Top/Top";
 import Search from "./pages/Search/Search"
+import Contact from "./pages/Contact/Contact";
+
 
 //style
 import "../node_modules/bulma/bulma.sass";
@@ -25,6 +27,7 @@ function Index() {
             <main className="mt-6">
                 <Route exact path="/" component={Top} />
                 <Route path="/Search" component={Search} />
+                <Route path="/Contact" component={Contact}/>
             </main>
             <Footer />
         </Router>

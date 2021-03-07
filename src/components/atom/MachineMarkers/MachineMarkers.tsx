@@ -1,7 +1,6 @@
-import React, {useState, useMemo} from "react";
+import React, {useMemo, FC} from "react";
 import {Marker, Popup,  useMap, } from "react-leaflet";
 import {LatLngBoundsExpression, LatLngExpression} from "leaflet";
-import {Simulate} from "react-dom/test-utils";
 
 interface LatLngAndBound{
     position: LatLngExpression;
@@ -12,18 +11,18 @@ const Marker1:LatLngAndBound = {
     position:[30, 60],
     bound: [[0, 0],[30, 60]]
 }
-
 const Marker2:LatLngAndBound = {
     position:[90, 240],
     bound:[[90, 240],[90, 240]]
 }
 
-function MachineMarkers(){
 
-    interface LatLngAndBound{
-        position: LatLngExpression;
-        bound: LatLngBoundsExpression;
-    }
+interface Props{
+    toggleModal:Function,
+}
+
+const MachineMarkers:FC<Props> = ({toggleModal}) => {
+
 
     const map = useMap();
 
@@ -31,6 +30,16 @@ function MachineMarkers(){
         () => ({
             click(){
                 map.fitBounds(Marker1.bound)
+                toggleModal(true)
+            },
+        }),
+        [map],
+    )
+
+    const Handlers2 = useMemo(
+        () => ({
+            click(){
+                map.fitBounds(Marker2.bound)
             },
         }),
         [map],
@@ -39,15 +48,18 @@ function MachineMarkers(){
     return(
         <>
             <Marker
-                position={Marker1.position}
-                eventHandlers={Handlers1}
+                position = {Marker1.position}
+                eventHandlers = {Handlers1}
             >
                 <Popup>
                     マーカーⅠ
                 </Popup>
             </Marker>
 
-            <Marker position={Marker2.position}>
+            <Marker
+                position={Marker2.position}
+                eventHandlers = {Handlers2}
+            >
                 <Popup>
                     マーカーⅡ
                 </Popup>

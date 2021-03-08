@@ -46,6 +46,8 @@ const config: Configuration = {
                         loader: 'file-loader',
                         options: {
                             name: '[name].[ext]',
+                            outputPath : 'assets/images/',
+
                         },
                     },
                 ],

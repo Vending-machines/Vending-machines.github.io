@@ -1,20 +1,25 @@
 import React, {useMemo, FC} from "react";
-import {Marker, Popup, useMap,} from "react-leaflet";
+import {Marker, Popup, useMap, Tooltip} from "react-leaflet";
 import {LatLngBoundsExpression, LatLngExpression} from "leaflet";
 
 
 
 //marker-shadowのimport
 import L from "leaflet";
-import "leaflet/dist/leaflet.css";
 import icon from "leaflet/dist/images/marker-icon.png";
+import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
 
 let DefaultIcon = L.icon({
     iconUrl: icon,
-    shadowUrl: iconShadow
+    iconRetinaUrl: iconRetina,
+    shadowUrl: iconShadow,
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    tooltipAnchor: [16, -28],
+    shadowSize: [41, 41]
 });
-
 L.Marker.prototype.options.icon = DefaultIcon;
 
 
@@ -68,18 +73,18 @@ const MachineMarkers:FC<Props> = ({toggleModal}) => {
                 position = {Marker1.position}
                 eventHandlers = {Handlers1}
             >
-                <Popup>
-                    マーカーⅠ
-                </Popup>
+                <Tooltip direction="auto">
+                    kitaaaaaaaaa
+                </Tooltip>
             </Marker>
 
             <Marker
                 position={Marker2.position}
                 eventHandlers = {Handlers2}
             >
-                <Popup>
-                    マーカーⅡ
-                </Popup>
+                <Tooltip direction="auto">
+                    uoooooooooo
+                </Tooltip>
             </Marker>
         </>
     )

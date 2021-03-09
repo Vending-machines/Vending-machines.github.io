@@ -4,8 +4,8 @@ import {MapContainer, ImageOverlay,} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import "./Search.module.scss"
 
-import MachineMarkers from "../../components/atom/MachineMarkers/MachineMarkers";
-import PopupImage from "../../components/atom/PopupImage/PopupImage";
+import MachineMarkers from "../../components/module/MachineMarkers/MachineMarkers";
+import PopupImage from "../../components/module/PopupImage/PopupImage";
 
 import kosenMap from "../../assets/img/kosenMap.png"
 

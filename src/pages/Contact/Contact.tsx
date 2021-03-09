@@ -1,5 +1,5 @@
 import React from "react";
-import PopupImage from "../../components/atom/PopupImage/PopupImage";
+import PopupImage from "../../components/module/PopupImage/PopupImage";
 
 
 function Contact () {

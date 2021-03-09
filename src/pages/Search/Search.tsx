@@ -11,11 +11,18 @@ import kosenMap from "../../assets/img/kosenMap.png"
 
 const Search:FC = () => {
 
-    const [Modal, setModal] = useState(false)
+    const [Modal, setModal] = useState(true)
 
     function switchModal(value:boolean) {
         setModal(value);
     }
+
+    const [ModalContent, setModalContent] = useState(0);
+
+    function switchModalContent(value:number){
+        setModalContent(value);
+    }
+
 
     return(
         <div className="is-centered columns">
@@ -42,14 +49,22 @@ const Search:FC = () => {
                         zIndex = {-100}
                     />
 
-                    <MachineMarkers toggleModal={switchModal} />
+                    <MachineMarkers
+                        toggleModal={switchModal}
+                        toggleModalContent={switchModalContent}
+                    />
 
                 </MapContainer>
             </div>
 
 
 
-            <PopupImage toggleModal={switchModal} active={Modal} />
+            <PopupImage
+                active={Modal}
+                toggleModal={switchModal}
+                content={ModalContent}
+                toggleModalContent={switchModalContent}
+            />
 
         </div>
 

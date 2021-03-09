@@ -5,13 +5,16 @@
     "jsx": "react",
     "sourceMap": true,
     "removeComments": true,
+    "resolveJsonModule": true,
     "importHelpers": true,
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "noImplicitAny": false
+    "noImplicitAny": false,
+    "outDir": "./dist",
+    "rootDir": "."
   },
   "ts-node": {
     "compilerOptions": {

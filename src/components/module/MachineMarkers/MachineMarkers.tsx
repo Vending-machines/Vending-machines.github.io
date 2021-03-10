@@ -69,7 +69,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
         () => ({
             click(){
                 toggleModal(true)
-                toggleModalContent(1)
+                toggleModalContent(3)
             },
         }),
         [map],
@@ -79,7 +79,37 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
         () => ({
             click(){
                 toggleModal(true)
-                toggleModalContent(2)
+                toggleModalContent(4)
+            },
+        }),
+        [map],
+    )
+
+    const Handlers3 = useMemo(
+        () => ({
+            click(){
+                toggleModal(true)
+                toggleModalContent(5)
+            },
+        }),
+        [map],
+    )
+
+    const Handlers4 = useMemo(
+        () => ({
+            click(){
+                toggleModal(true)
+                toggleModalContent(6)
+            },
+        }),
+        [map],
+    )
+
+    const Handlers5 = useMemo(
+        () => ({
+            click(){
+                toggleModal(true)
+                toggleModalContent(7)
             },
         }),
         [map],
@@ -107,6 +137,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
 
             <Marker
                 position={Marker3.position}
+                eventHandlers={Handlers3}
             >
                 <Tooltip>
                     {Vendingmachines["2"]}
@@ -115,6 +146,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
 
             <Marker
                 position={Marker4.position}
+                eventHandlers={Handlers4}
             >
                 <Tooltip>
                     {Vendingmachines["3"]}
@@ -123,6 +155,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
 
             <Marker
                 position={Marker5.position}
+                eventHandlers={Handlers5}
             >
                 <Tooltip>
                     {Vendingmachines["4"]}

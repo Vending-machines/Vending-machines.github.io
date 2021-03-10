@@ -1,5 +1,5 @@
 import React, {FC, useState} from "react";
-import {MapContainer, ImageOverlay,} from 'react-leaflet';
+import {MapContainer, ImageOverlay} from 'react-leaflet';
 
 import 'leaflet/dist/leaflet.css';
 import "./Search.module.scss"
@@ -22,7 +22,6 @@ const Search:FC = () => {
     function switchModalContent(value:number){
         setModalContent(value);
     }
-
 
     return(
         <div className="is-centered columns">

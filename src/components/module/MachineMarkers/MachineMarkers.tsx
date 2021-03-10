@@ -2,6 +2,7 @@ import React, {useMemo, FC} from "react";
 import {Marker, Popup, useMap, Tooltip} from "react-leaflet";
 import {LatLngBoundsExpression, LatLngExpression} from "leaflet";
 
+import Vendingmachines from "../../../__test__/Sample-Json-master/Vending-machines.json";
 
 
 //marker-shadowのimport
@@ -91,7 +92,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
                 eventHandlers = {Handlers1}
             >
                 <Tooltip direction="auto">
-                    kitaaaaaaaaa
+                    {Vendingmachines["5"]}
                 </Tooltip>
             </Marker>
 
@@ -100,7 +101,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
                 eventHandlers = {Handlers2}
             >
                 <Tooltip direction="auto">
-                    uoooooooooo
+                    {Vendingmachines["1"]}
                 </Tooltip>
             </Marker>
 
@@ -108,7 +109,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
                 position={Marker3.position}
             >
                 <Tooltip>
-                    oooo
+                    {Vendingmachines["2"]}
                 </Tooltip>
             </Marker>
 
@@ -116,7 +117,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
                 position={Marker4.position}
             >
                 <Tooltip>
-                    oooo
+                    {Vendingmachines["3"]}
                 </Tooltip>
             </Marker>
 
@@ -124,7 +125,7 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
                 position={Marker5.position}
             >
                 <Tooltip>
-                    oooo
+                    {Vendingmachines["4"]}
                 </Tooltip>
             </Marker>
         </>

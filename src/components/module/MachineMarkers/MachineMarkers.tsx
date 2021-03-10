@@ -1,5 +1,5 @@
 import React, {useMemo, FC} from "react";
-import {Marker, Popup, useMap, Tooltip} from "react-leaflet";
+import {Marker, useMap, Tooltip} from "react-leaflet";
 import {LatLngBoundsExpression, LatLngExpression} from "leaflet";
 
 import Vendingmachines from "../../../__test__/Sample-Json-master/Vending-machines.json";
@@ -10,7 +10,6 @@ import L from "leaflet";
 import icon from "leaflet/dist/images/marker-icon.png";
 import iconRetina from "leaflet/dist/images/marker-icon-2x.png";
 import iconShadow from "leaflet/dist/images/marker-shadow.png";
-import {futimes} from "fs";
 
 let DefaultIcon = L.icon({
     iconUrl: icon,

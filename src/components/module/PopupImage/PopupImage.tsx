@@ -16,7 +16,6 @@ import bottle from "../../../assets/img/bottle.png";
 import vendingmachine from "../../../assets/img/vending-machine.png";
 
 import item_name from "../../../__test__/Sample-Json-master/item_name.json";
-import {type} from "os";
 
 
 const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) =>{

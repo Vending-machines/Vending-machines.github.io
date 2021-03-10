@@ -51,7 +51,6 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
                 }
             }
 
-
             return (
                 <table className="table">
                     <thead>

@@ -16,6 +16,7 @@ import bottle from "../../../assets/img/bottle.png";
 import vendingmachine from "../../../assets/img/vending-machine.png";
 
 import item_name from "../../../__test__/Sample-Json-master/item_name.json";
+import {type} from "os";
 
 
 const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) =>{
@@ -24,7 +25,7 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
 
         if (content === 0){
             return(
-                <Box className="columns is-centered">
+                <div className="columns is-centered">
                     <Column isSize={4}>
                         <Box onClick={() => {toggleModalContent(1)}}>
                             <img src={bottle} alt=""/>
@@ -38,18 +39,44 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
                             <h1 className="has-text-centered">自販機から探す</h1>
                         </Box>
                     </Column>
-                </Box>
+                </div>
             )
         } else if (content === 1) {
-            return (
-                <>
 
-                </>
+            let array: string[] = [];
+
+            for (const [id, name] of Object.entries(item_name)){
+                if (!isNaN(parseInt(id))){
+                    array.push(name);
+                }
+            }
+
+
+            return (
+                <table className="table">
+                    <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>商品名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    { array.map((d,idx) => {
+                        return (
+                            <tr key={idx + 1}>
+                                <th>{idx + 1}</th>
+                                <th>{d}</th>
+                            </tr>
+                            )
+                    })}
+                    </tbody>
+                </table>
             )
         } else {
             return (<></>)
         }
     }
+
 
     return (
         <>
@@ -62,7 +89,7 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
                                 <button className="delete" aria-label="close" onClick={() => toggleModal(false)}/>
                             </header>
                             <section className="modal-card-body">
-                                {item_name["1"]}
+                                <ModalContent />
                             </section>
                             <footer className="modal-card-foot" />
                         </div>

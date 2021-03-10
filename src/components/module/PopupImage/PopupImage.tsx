@@ -25,7 +25,7 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
 
         if (content === 0){
             return(
-                <div className="columns is-centered">
+                <Box className="columns is-centered">
                     <Column isSize={4}>
                         <Box onClick={() => {toggleModalContent(1)}}>
                             <img src={bottle} alt=""/>
@@ -39,7 +39,7 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
                             <h1 className="has-text-centered">自販機から探す</h1>
                         </Box>
                     </Column>
-                </div>
+                </Box>
             )
         } else if (content === 1) {
 
@@ -52,27 +52,38 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
             }
 
             return (
-                <table className="table">
-                    <thead>
-                    <tr>
-                        <th>id</th>
-                        <th>商品名</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    { array.map((d,idx) => {
-                        return (
-                            <tr key={idx + 1}>
-                                <th>{idx + 1}</th>
-                                <th>{d}</th>
+                <div className="modal-card">
+                    <header className="modal-card-head">
+                        <p className="modal-card-title">商品一覧</p>
+                        <button className="delete" aria-label="close" onClick={() => toggleModal(false)}/>
+                    </header>
+                    <section className="modal-card-body">
+                        <table className="table">
+                            <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>商品名</th>
                             </tr>
-                            )
-                    })}
-                    </tbody>
-                </table>
+                            </thead>
+                            <tbody>
+                            { array.map((d,idx) => {
+                                return (
+                                    <tr key={idx + 1}>
+                                        <th>{idx + 1}</th>
+                                        <th>{d}</th>
+                                    </tr>
+                                )
+                            })}
+                            </tbody>
+                        </table>
+                    </section>
+                    <footer className="modal-card-foot" />
+                </div>
             )
+        } else if(content === 2){
+            return (<></>);
         } else {
-            return (<></>)
+            return (<></>);
         }
     }
 
@@ -82,16 +93,7 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
             <div className={`modal ${active ? "is-active" : ""}`}>
                 <div className="modal-background" onClick={() => toggleModal(false)} />
                     <div className="modal-content">
-                        <div className="modal-card">
-                            <header className="modal-card-head">
-                                <p className="modal-card-title">商品一覧</p>
-                                <button className="delete" aria-label="close" onClick={() => toggleModal(false)}/>
-                            </header>
-                            <section className="modal-card-body">
-                                <ModalContent />
-                            </section>
-                            <footer className="modal-card-foot" />
-                        </div>
+                        <ModalContent />
                     </div>
                 <button className="modal-close is-large" aria-label="close" onClick={() => toggleModal(false)}/>
             </div>

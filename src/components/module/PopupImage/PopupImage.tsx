@@ -16,13 +16,14 @@ import bottle from "../../../assets/img/bottle.png";
 import vendingmachine from "../../../assets/img/vending-machine.png";
 
 import item_name from "../../../__test__/Sample-Json-master/item_name.json";
+import Vendingmachine from "../../../__test__/Sample-Json-master/Vending-machines.json";
 
-
-const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) =>{
+const PopupImage:FC<Props> = ({active, toggleModal, content, toggleModalContent}) =>{
 
     const ModalContent: FC = () =>{
 
         if (content === 0){
+
             return(
                 <Box className="columns is-centered">
                     <Column isSize={4}>
@@ -40,6 +41,7 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
                     </Column>
                 </Box>
             )
+
         } else if (content === 1) {
 
             let array: string[] = [];
@@ -64,25 +66,67 @@ const PopupImage:FC<Props> = ({active, toggleModal,content,toggleModalContent}) 
                                 <th>商品名</th>
                             </tr>
                             </thead>
-                            <tbody>
                             { array.map((d,idx) => {
                                 return (
-                                    <tr key={idx + 1}>
-                                        <th>{idx + 1}</th>
-                                        <th>{d}</th>
-                                    </tr>
+                                    <tbody key={idx + 1}>
+                                        <tr>
+                                            <th>{idx + 1}</th>
+                                            <th>{d}</th>
+                                        </tr>
+                                    </tbody>
                                 )
                             })}
-                            </tbody>
                         </table>
                     </section>
                     <footer className="modal-card-foot" />
                 </div>
             )
+
         } else if(content === 2){
-            return (<></>);
+
+            let array: string[] = [];
+
+            for (const [id, place] of Object.entries(Vendingmachine)) {
+                if (!isNaN(parseInt(id))) {
+                    array.push(place);
+                }
+            }
+
+            return (
+                <div className="modal-card">
+                    <header className="modal-card-head">
+                        <p className="modal-card-title">自販機一覧</p>
+                        <button className="delete" aria-label="close" onClick={() => toggleModal(false)}/>
+                    </header>
+                    <section className="modal-card-body">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>自販機の場所</th>
+                                </tr>
+                            </thead>
+                            { array.map((d,idx) => {
+                                return (
+                                    <tbody key={idx + 1} onClick={() => {}}>
+                                        <tr>
+                                            <th>{idx + 1}</th>
+                                            <th>{d}</th>
+                                        </tr>
+                                    </tbody>
+                                )
+                            })}
+                        </table>
+                    </section>
+                    <footer className="modal-card-foot" />
+                </div>
+            )
+
         } else {
-            return (<></>);
+            return (
+                <>
+                </>
+            )
         }
     }
 

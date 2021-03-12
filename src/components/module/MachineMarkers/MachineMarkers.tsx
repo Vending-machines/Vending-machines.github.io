@@ -1,4 +1,4 @@
-import React, {useMemo, FC} from "react";
+import React, {useMemo, FC, useEffect} from "react";
 import {Marker, useMap, Tooltip} from "react-leaflet";
 
 import Vendingmachines from "../../../__test__/Sample-Json-master/Vending-machines.json";
@@ -24,19 +24,20 @@ let DefaultIcon = L.icon({
 L.Marker.prototype.options.icon = DefaultIcon;
 
 interface Props{
-    toggleModal:Function,
+    toggleModal:Function
     toggleModalContent:Function
+    View:number
 }
 
-const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
+const MachineMarkers:FC<Props> = (Props) => {
 
     const map = useMap();
 
     const Handlers1 = useMemo(
         () => ({
             click(){
-                toggleModal(true)
-                toggleModalContent(3)
+                Props.toggleModal(true)
+                Props.toggleModalContent(3)
             },
         }),
         [map],
@@ -45,8 +46,8 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
     const Handlers2 = useMemo(
         () => ({
             click(){
-                toggleModal(true)
-                toggleModalContent(4)
+                Props.toggleModal(true)
+                Props.toggleModalContent(4)
             },
         }),
         [map],
@@ -55,8 +56,8 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
     const Handlers3 = useMemo(
         () => ({
             click(){
-                toggleModal(true)
-                toggleModalContent(5)
+                Props.toggleModal(true)
+                Props.toggleModalContent(5)
             },
         }),
         [map],
@@ -65,8 +66,8 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
     const Handlers4 = useMemo(
         () => ({
             click(){
-                toggleModal(true)
-                toggleModalContent(6)
+                Props.toggleModal(true)
+                Props.toggleModalContent(6)
             },
         }),
         [map],
@@ -75,12 +76,38 @@ const MachineMarkers:FC<Props> = ({toggleModal, toggleModalContent}) => {
     const Handlers5 = useMemo(
         () => ({
             click(){
-                toggleModal(true)
-                toggleModalContent(7)
+                Props.toggleModal(true)
+                Props.toggleModalContent(7)
             },
         }),
         [map],
     )
+
+    useEffect(
+        () => {
+            switch (Props.View){
+                case 1:
+                    map.fitBounds(bounds.Marker1.bound);
+                    break;
+                case 2:
+                    map.fitBounds(bounds.Marker2.bound);
+                    break;
+                case 3:
+                    map.fitBounds(bounds.Marker3.bound);
+                    break;
+                case 4:
+                    map.fitBounds(bounds.Marker4.bound);
+                    break;
+                case 5:
+                    map.fitBounds(bounds.Marker5.bound);
+                    break;
+                default:
+            }
+        },
+        [Props.View]
+    )
+
+    console.log("MachineMarkersをレンダー！");
 
     return(
         <>

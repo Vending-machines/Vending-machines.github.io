@@ -23,6 +23,14 @@ const Search:FC = () => {
         setModalContent(value);
     }
 
+    const [View, setView] = useState(0);
+
+    function switchView(value:number){
+        setView(value)
+    }
+
+    console.log("Searchをれんだー！");
+
     return(
         <div className="is-centered columns">
 
@@ -51,18 +59,19 @@ const Search:FC = () => {
                     <MachineMarkers
                         toggleModal={switchModal}
                         toggleModalContent={switchModalContent}
+                        View={View}
                     />
 
                 </MapContainer>
+
             </div>
-
-
 
             <PopupImage
                 active={Modal}
                 toggleModal={switchModal}
                 content={ModalContent}
                 toggleModalContent={switchModalContent}
+                toggleView={switchView}
             />
 
         </div>

@@ -5,15 +5,15 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "webpack && gh-pages -d dist"
   },
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Vending-machines/Pagesrc.git"
+    "url": "git+https://github.com/Vending-machines/Vending-machines.github.io.git"
   },
   "bugs": {
-    "url": "https://github.com/Vending-machines/Pagesrc/issues"
+    "url": "https://github.com/Vending-machines/Vending-machines.github.io/issues"
   },
   "homepage": "https://Vending-machine.github.io",
   "license": "ISC",

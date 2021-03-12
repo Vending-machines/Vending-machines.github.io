@@ -5,7 +5,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "deploy": "webpack && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "author": "",
   "repository": {
